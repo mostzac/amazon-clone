@@ -1,27 +1,9 @@
 export const initialState = {
-  basket: [
-    {
-      id: "23445930",
-      title:
-        "Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric",
-      price: 98.99,
-      rating: 5,
-      image:
-        "https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$",
-    },
-    {
-      id: "23445930",
-      title:
-        "Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric",
-      price: 98.99,
-      rating: 5,
-      image:
-        "https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$",
-    },
-  ],
+  basket: [],
   user: null,
 };
 
+//Selector
 export const getBasketTotal = (basket) => {
   let total = basket?.reduce((pre, next) => next.price + pre, 0);
   console.log(total);
@@ -55,6 +37,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         basket: newBasket,
+      };
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
       };
     default:
       return state;
