@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Payment.css";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
@@ -18,8 +18,19 @@ function Payment() {
   const [processing, setProcessing] = useState("");
   const [succeeded, setSucceeded] = useState(false);
 
+  const [clientSecret, setClientScret] = useState(true);
+
+  // call when payment component loads or any variable changes, here is the basket
+  useEffect(() => {}, [basket]);
+
   const handleSubmit = async (e) => {
-      
+    //prevent page refreshing
+    e.preventDefault();
+    setProcessing(true);
+
+    //
+
+    // const payload = await stripe
   };
 
   const handleChange = (e) => {
