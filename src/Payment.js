@@ -58,6 +58,11 @@ function Payment() {
         setError(null);
         setProcessing(false);
 
+        //empty the basket
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+
         //swap the page to orders
         history.replace("/orders");
       });
