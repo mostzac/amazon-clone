@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import { useStateValue } from "./StateProvider";
@@ -6,6 +6,12 @@ import CheckoutProduct from "./CheckoutProduct";
 
 function Checkout() {
   const [{ basket, user }] = useStateValue();
+
+  // useEffect(() => {
+  //   console.log("Basket >>> ", basket);
+  // }, [basket, user]);
+
+  console.log("Basket>>", basket);
   return (
     <div className="checkout">
       <div className="checkout__left">

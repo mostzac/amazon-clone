@@ -1,8 +1,12 @@
 import React from "react";
 import "./Home.css";
 import Product from "./Product";
+import { useStateValue } from "./StateProvider";
 
 function Home() {
+  const[{user}] = useStateValue();
+  console.log(user);
+  
   return (
     <div className="home">
       <div className="home__container">
